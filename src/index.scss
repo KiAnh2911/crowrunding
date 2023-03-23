@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-primary text-base font-normal mx-auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 1440px;
+  }
+  input {
+    @apply outline-none;
+  }
+  input:focus + .error-input {
+    display: none;
+  }
+}
+.quill {
+  @apply border border-strock rounded-xl text-center;
+  padding: 15px 25px;
+  .ql-toolbar.ql-snow {
+    border: none;
+    @apply bg-text4 bg-opacity-10 rounded-xl py-3 px-5 inline-block mx-auto;
+  }
+  .ql-container.ql-snow,
+  .ql-editor {
+    @apply border-none font-primary text-sm;
+  }
+  .ql-editor {
+    @apply pt-10;
+  }
+  .ql-editor.ql-blank::before {
+    @apply text-sm not-italic text-text4;
+  }
+}
+.gradient-overlay {
+  background: linear-gradient(
+    179.14deg,
+    rgba(32, 18, 63, 0) -7.14%,
+    #000000 87.01%
+  );
+  @apply inset-0 absolute opacity-40 rounded-xl z-10;
+}
+.shadow-1 {
+  box-shadow: -4px 4px 8px rgba(226, 226, 226, 0.2),
+    4px 4px 8px rgba(226, 226, 226, 0.2);
+}
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+.overflow-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.overflow-hidden::-webkit-scrollbar {
+  display: none;
+}
+body {
+  .react-date-picker {
+    @apply w-full py-4 px-6 border rounded-xl bg-transparent text-sm   font-medium placeholder:text-text4 dark:placeholder:text-text2 border-strock text-text1 dark:text-white dark:border-darkStroke max-h-[54px];
+  }
+  .react-date-picker__clear-button {
+    @apply hidden;
+  }
+  .react-date-picker__wrapper {
+    @apply border-none;
+  }
+  .react-date-picker__inputGroup {
+    @apply min-w-0 p-0 items-center;
+  }
+  .react-date-picker__button {
+    @apply p-0;
+  }
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    @apply text-primary;
+  }
+  .react-calendar__tile--active,
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    @apply bg-primary text-white;
+  }
+
+  .react-calendar__tile--now,
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    @apply bg-secondary text-white;
+  }
+  .react-date-picker__calendar .react-calendar {
+    @apply border-none shadow rounded-lg;
+  }
+}
+.list-grid {
+  @apply grid-cols-[1.7fr_1fr_1fr_1fr];
+  display: grid;
+  // grid-template-columns: repeat(4, 1.4fr);
+  justify-content: space-between;
+  align-items: center;
+}
